@@ -50,7 +50,14 @@ const tasksListSource = "src/json/tasks.json";
 const parent = document.querySelector("main");
 const tasksTemplate = document.querySelector("#tasksTemplate").content;
 
-//Variables for displaying the specific weekday name
+//All the variables neede for playing and pausing audio
+//Loading the audio source
+let audio = new Audio();
+audio.src = "src/audio/queen_audio.mp3";
+let playButton = document.querySelector("#playButton");
+let pauseButton = document.querySelector("#pauseButton");
+
+//Variables needed for displaying the specific weekday name
 let dayName = date.getDay();
 let currentWeekdayName = weekDaysList[dayName];
 
@@ -148,7 +155,7 @@ function showTasksForToday(tasks) {
     clone.querySelector("#timeTable").textContent = task.time;
     clone.querySelector("#taskTable").textContent = task.description;
 
-    //Cloning the tasks only for the current weekday otherwise we hide objects
+    //Cloning the tasks only for the current weekday otherwise hiding objects
     if (task.day == currentWeekdayName) {
       parent.appendChild(clone);
     } else {
@@ -167,4 +174,18 @@ function loadSVG() {
         .querySelector("#svgAnimation")
         .insertAdjacentHTML("afterbegin", svgdata);
     });
+}
+
+//Playing and pausing audio on the click event
+playButton.addEventListener("click", hidePlayButton);
+pauseButton.addEventListener("click", hidePauseButton);
+
+function hidePlayButton() {
+  playButton.classList.add("hidden");
+  pauseButton.classList.remove("hidden");
+}
+
+function hidePauseButton() {
+  pauseButton.classList.add("hidden");
+  playButton.classList.remove("hidden");
 }
