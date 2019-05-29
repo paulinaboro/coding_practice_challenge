@@ -1,0 +1,101 @@
+body {
+  background-color: #ccddff;
+  font-family: "Lato", sans-serif;
+  color: black;
+  color: white;
+}
+
+ul li {
+  display: inline-flex;
+}
+
+.hidden {
+  display: none;
+}
+
+table {
+  border-bottom: 2px solid white;
+}
+
+#newTitleButton {
+  background-color: #00a7df;
+  border-radius: 23px;
+  border: 1px solid #1e75e6;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 10px 26px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+#newTitleButton:hover {
+  background-color: #1e75e6;
+  transform: scale(1.1);
+  transition-duration: 1s;
+}
+#backgroundColorContainer {
+  margin-right: 3vw;
+}
+#backgroundColorContainer,
+#pageTitleContainer {
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 12vh;
+  margin-bottom: 12vh;
+  padding-top: 12vh;
+  color: black;
+  width: 25vw;
+  height: 20vh;
+  box-shadow: 7px 10px 9px 0px rgba(115, 115, 115, 1);
+  background-color: #e6f2ff;
+}
+
+/* GRIDS */
+#mainContainer {
+  background-image: linear-gradient(
+    to right bottom,
+    #276ee5,
+    #008fed,
+    #00a8df,
+    #00bbc9,
+    #6acbb9
+  );
+  -webkit-box-shadow: 7px 10px 5px 0px rgba(110, 108, 110, 1);
+  -moz-box-shadow: 7px 10px 5px 0px rgba(110, 108, 110, 1);
+  box-shadow: 7px 10px 5px 0px rgba(110, 108, 110, 1);
+  background-color: #e34e3a;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    ". currentPageTitle . ."
+    ". .  dateAndTimeContainer ."
+    ". . taskContainer ."
+    ". backgroundColorContainer pageTitleContainer .";
+}
+
+#currentPageTitle {
+  margin-top: 10vh;
+  grid-area: currentPageTitle;
+  grid-column: 2/3;
+}
+
+#dateAndTimeContainer {
+  grid-area: dateAndTimeContainer;
+  grid-column: 3/3;
+}
+
+#taskContainer {
+  grid-area: taskContainer;
+  grid-column: 2/3;
+}
+#backgroundColorContainer {
+  grid-area: backgroundColorContainer;
+  grid-column: 2/2;
+}
+#pageTitleContainer {
+  grid-area: pageTitleContainer;
+  grid-column: 3/3;
+}
