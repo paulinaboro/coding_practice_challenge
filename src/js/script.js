@@ -101,14 +101,15 @@ function showTheCurrentMonthName() {
 function showTheCurrentYear() {
   let year = date.getFullYear();
   currentYear.innerHTML = year;
-  showTheCurrentTime();
 }
+showTheCurrentTime();
 
 //Showing the current time and updating every 1000ms
 function showTheCurrentTime() {
   setInterval(function() {
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
+    let date_mins = new Date();
+    let hours = date_mins.getHours();
+    let minutes = date_mins.getMinutes();
     let ampm = hours >= 12 ? "PM" : "AM";
 
     //We call the function checkTime to check if the number is less than 10
