@@ -70,9 +70,9 @@ table {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
-    ". currentPageTitle . ."
-    ". .  dateAndTimeContainer ."
-    ". . taskContainer ."
+    ". currentPageTitle svgAnimation svgAnimation"
+    ". dateAndTimeContainer svgAnimation svgAnimation"
+    ". taskContainer svgAnimation svgAnimation"
     ". backgroundColorContainer pageTitleContainer .";
 }
 
@@ -82,9 +82,13 @@ table {
   grid-column: 2/3;
 }
 
+#svgAnimation {
+  grid-area: svgAnimation;
+  grid-column: 3/5;
+}
 #dateAndTimeContainer {
   grid-area: dateAndTimeContainer;
-  grid-column: 3/3;
+  grid-column: 2/3;
 }
 
 #taskContainer {
@@ -98,4 +102,55 @@ table {
 #pageTitleContainer {
   grid-area: pageTitleContainer;
   grid-column: 3/3;
+}
+
+/* Animation  */
+#wiredelta_superhero,
+.line {
+  animation: flying 1s infinite alternate ease-in-out;
+}
+@keyframes flying {
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.clouds,
+.thunderbolt {
+  animation: moving 3s infinite alternate ease-in-out;
+}
+@keyframes moving {
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+#thunderbolt_left_shoe {
+  animation: fade 2s ease-out alternate infinite;
+}
+
+@keyframes fade {
+  100% {
+    opacity: 0;
+  }
+}
+
+#thunderbolt_right_shoe {
+  animation: fade1 1s ease-out alternate infinite;
+}
+
+@keyframes fade1 {
+  100% {
+    opacity: 0;
+  }
+}
+
+#stars {
+  animation: blink 1.5s ease-out alternate infinite;
+}
+
+@keyframes blink {
+  100% {
+    opacity: 0;
+  }
 }

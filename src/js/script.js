@@ -2,6 +2,7 @@
 
 window.addEventListener("DOMContentLoaded", showTheCurrentWeekday);
 window.addEventListener("DOMContentLoaded", fetchJSON);
+window.addEventListener("DOMContentLoaded", loadSVG);
 
 //All the variables needed for displaying the date and time
 let date = new Date();
@@ -155,4 +156,15 @@ function showTasksForToday(tasks) {
       clone.querySelector("#taskTable").classList.add("hidden");
     }
   });
+}
+
+//Animation, loading svg file
+function loadSVG() {
+  fetch("src/svg/animation.svg")
+    .then(response => response.text())
+    .then(svgdata => {
+      document
+        .querySelector("#svgAnimation")
+        .insertAdjacentHTML("afterbegin", svgdata);
+    });
 }
