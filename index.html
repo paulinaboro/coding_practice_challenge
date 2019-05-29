@@ -20,9 +20,8 @@
   <body>
     <div id="mainContainer">
       <h1 id="currentPageTitle">My Day</h1>
-      
-      <div id="svgAnimation">
-      </div>
+
+      <div id="svgAnimation"></div>
       <div id="dateAndTimeContainer">
         <ul id="date_elements">
           <li><i class="far fa-calendar-check"></i></li>
@@ -32,16 +31,24 @@
           <li><p id="currentYear"></p></li>
         </ul>
         <ul>
-        <li><i class="far fa-clock"></i></p></li>
-        <li><p id="currentTime"></p></li>
-      </ul>
+          <li><i class="far fa-clock"></i></li>
+          <li><p id="currentTime"></p></li>
+        </ul>
       </div>
 
       <div id="taskContainer">
         <h2>My tasks for today:</h2>
         <main></main>
-        <button class="musicButton" id="playButton"onmousedown="audio.play()"><i class="fas fa-play"></i></button>
-      <button class="musicButton hidden" id="pauseButton" onmousedown="audio.pause()"><i class="fas fa-pause"></i></button>
+        <button class="musicButton" id="playButton" onmousedown="audio.play()">
+          <i class="fas fa-play"></i>
+        </button>
+        <button
+          class="musicButton hidden"
+          id="pauseButton"
+          onmousedown="audio.pause()"
+        >
+          <i class="fas fa-pause"></i>
+        </button>
         <template id="tasksTemplate">
           <table>
             <tr>
@@ -52,16 +59,10 @@
         </template>
       </div>
       <div id="backgroundColorContainer">
-        <label for="head">Change the page background color:</label>
+        <label for="colorPicker">Change the page background color:</label>
         <br />
         <br />
-        <input
-          id="colorPicker"
-          type="color"
-          id="head"
-          name="head"
-          value="#e66465"
-        />
+        <input id="colorPicker" type="color" name="head" value="#e66465" />
       </div>
       <div id="pageTitleContainer">
         <label for="newTitle">Do you want to change the webpage title?</label>

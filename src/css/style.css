@@ -51,7 +51,6 @@ table {
 }
 
 /*Audio buttons*/
-
 .musicButton {
   margin-top: 5vh;
   /* text-decoration: none; */
@@ -121,7 +120,7 @@ table {
   grid-column: 3/3;
 }
 
-/* Animations  */
+/* Animations of the svg elements */
 #wiredelta_superhero,
 .line {
   animation: flying 1s infinite alternate ease-in-out;
